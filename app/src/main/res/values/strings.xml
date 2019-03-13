@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">人脸检测</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="help">输入：相册或者相机\n点击拍照之后点击结果即可查看面相分析
+    </string>
+</resources>

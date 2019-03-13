@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/back1"
+    tools:context=".result">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="80dp"
+        android:id="@+id/image"
+        />
+
+
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="180dp"
+            android:layout_height="50dp"
+            android:text="眼睛适中"
+            android:id="@+id/textView1"
+            android:layout_marginLeft="100dp"
+            android:textStyle="bold"
+            android:background="@mipmap/back2"
+            android:textSize="28dp"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="180dp"
+            android:layout_height="50dp"
+            android:text="嘴角向上"
+            android:id="@+id/textView2"
+            android:layout_marginLeft="100dp"
+            android:textStyle="bold"
+            android:background="@mipmap/back2"
+            android:textSize="28dp"
+            android:gravity="center"
+
+            />
+
+
+
+
+        <Button
+            android:text="面相分析"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:id="@+id/text1"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="125dp"
+            android:background="@mipmap/back2"
+            />
+
+        <Button
+            android:text="返回"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:id="@+id/text2"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="125dp"
+            android:background="@mipmap/back2"
+            />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
