@@ -57,6 +57,14 @@ public class gallery extends AppCompatActivity {
                 android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(intent, 1);
 
+        findViewById(R.id.rt).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1= new Intent(gallery.this,textureActivity.class);
+                startActivity(intent1);
+            }
+        });
+
         findViewById(R.id.db).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

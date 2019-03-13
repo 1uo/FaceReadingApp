@@ -30,20 +30,20 @@
             android:id="@+id/textView1"
             android:layout_marginLeft="100dp"
             android:textStyle="bold"
-            android:background="@mipmap/back2"
+            android:background="@mipmap/back6"
             android:textSize="28dp"
             android:gravity="center"
             />
 
         <TextView
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="6dp"
             android:layout_width="180dp"
             android:layout_height="50dp"
             android:text="嘴角向上"
             android:id="@+id/textView2"
             android:layout_marginLeft="100dp"
             android:textStyle="bold"
-            android:background="@mipmap/back2"
+            android:background="@mipmap/back6"
             android:textSize="28dp"
             android:gravity="center"
 
@@ -71,9 +71,9 @@
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:id="@+id/text2"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="6dp"
             android:layout_marginLeft="125dp"
-            android:background="@mipmap/back2"
+            android:background="@mipmap/back8"
             />
 
     </LinearLayout>

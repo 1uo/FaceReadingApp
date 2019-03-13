@@ -293,12 +293,13 @@ public class textureActivity extends AppCompatActivity {
             //canvas.drawBitmap((getBitmap(bitmap)),0,0,paint);
 
             paint.setColor(Color.GREEN);
+            if(a1!=null) {
             //double a[][]=new double[72][2];
             double q=a1[0][0];
             double w=a1[0][0];
             double e=a1[0][1];
             double r=a1[0][1];
-            if(a1!=null) {
+
                 for (int i = 0; i < 72; i++) {
                     canvas.drawCircle((float) a1[i][0], (float) a1[i][1], 5, paint);
 
@@ -317,7 +318,7 @@ public class textureActivity extends AppCompatActivity {
 
                     Log.d("chulaile",q+" "+w+" "+e+" "+r);
                 }
-            }
+
 
             paint.setColor(Color.BLUE);
             paint.setStrokeWidth((float) 4.0);
@@ -337,7 +338,7 @@ public class textureActivity extends AppCompatActivity {
 
 
 
-        }
+        }}
 
 
     }
