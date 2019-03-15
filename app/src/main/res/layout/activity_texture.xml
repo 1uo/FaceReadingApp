@@ -24,35 +24,40 @@
         >
 
         <Button
+            android:textAllCaps="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/bt1"
             android:layout_weight="1"
-            android:text="帮助"/>
+            android:text="@string/t1"/>
         <Button
+            android:textAllCaps="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/bt2"
             android:layout_weight="1"
-                android:text="相册"/>
+                android:text="@string/t2"/>
         <Button
+            android:textAllCaps="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/bt3"
             android:layout_weight="1"
-            android:text="拍照"/>
+            android:text="@string/t3"/>
         <Button
+            android:textAllCaps="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/bt4"
             android:layout_weight="1"
-            android:text="结果"/>
+            android:text="@string/t4"/>
         <Button
+            android:textAllCaps="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/bt5"
             android:layout_weight="1"
-            android:text="设置"/>
+            android:text="@string/t5"/>
 
     </LinearLayout>
 

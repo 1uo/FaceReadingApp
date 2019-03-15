@@ -155,6 +155,13 @@ public class textureActivity extends AppCompatActivity {
                 startActivity(intent1);
             }
         });
+        findViewById(R.id.bt5).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1= new Intent(textureActivity.this,setting.class);
+                startActivity(intent1);
+            }
+        });
 
 
 
