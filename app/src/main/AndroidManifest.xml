@@ -28,7 +28,8 @@
         <activity android:name=".textureActivity" />
         <activity android:name=".dlib" />
         <activity android:name=".result" />
-        <activity android:name=".gallery"></activity>
+        <activity android:name=".gallery" />
+        <activity android:name=".setting"></activity>
     </application>
 
 </manifest>
