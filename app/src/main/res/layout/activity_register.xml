@@ -118,47 +118,22 @@
 
     </RelativeLayout>
 
-    <CheckBox
-        android:id="@+id/cb_checkbox"
-        android:layout_width="wrap_content"
+
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/rl_userPassword"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="@null"
-        android:checked="false"
-        android:duplicateParentState="false"
-        android:text="记住密码"
-        android:textColor="#666666"
-        android:textSize="15sp"
-        android:buttonTint="@color/colorLoginButton" />
-
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="340dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/cb_checkbox"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="23dp"
         android:background="@drawable/round_corner_bg"
         android:gravity="center"
         android:padding="10dp"
-        android:text="登录"
+        android:text="提交"
         android:textColor="#fff"
         android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/btn_register"
-        android:layout_width="340dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btn_login"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/round_corner_bg"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="注册"
-        android:textColor="#fff"
-        android:textSize="18sp" />
+
 
 </RelativeLayout>

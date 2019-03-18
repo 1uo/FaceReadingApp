@@ -3,6 +3,8 @@ package com.example.sichunluo.fac1;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -17,11 +19,13 @@ import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -55,6 +59,10 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();//隐藏标题栏
         setContentView(R.layout.activity_main);
 
+        final SQLiteDatabase mSQLiteDatabase = this.openOrCreateDatabase("myuser.db", MODE_PRIVATE, null);
+        String sql = "create table if not exists " + "User" + " (username text primary key, password text)";
+        mSQLiteDatabase.execSQL(sql);
+
 
 
         initPermission();
@@ -64,14 +72,59 @@ public class MainActivity extends AppCompatActivity {
                 pm.checkPermission("android.permission.CAMERA", "packageName"));
 
 
+        final EditText ed1 = findViewById(R.id.et_userName);
+        final EditText ed2 = findViewById(R.id.et_password);
 
-        findViewById(R.id.message).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btn_login).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1= new Intent(MainActivity.this,textureActivity.class);
-                startActivity(intent1);
+                Cursor cur = mSQLiteDatabase.rawQuery("SELECT * FROM User", null);
+                if( cur != null ){
+                    if( cur.moveToFirst() ){
+                        do{
+                            int numColumn = cur.getColumnIndex("username");
+                            String num            = cur.getString(numColumn);
+                            int numColumn2 = cur.getColumnIndex("password");
+                            String num2            = cur.getString(numColumn2);
+                            if(num.equals(ed1.getText().toString()) && num2.equals(ed2.getText().toString())) {
+                                Intent intent1 = new Intent(MainActivity.this, textureActivity.class);
+                                startActivity(intent1);
+                            }
+
+                        }while( cur.moveToNext());
+                    }
+                }else {
+
+
+                    if ("admin".equals(ed1.getText().toString()) && "123456".equals(ed2.getText().toString())) {
+                        Intent intent1 = new Intent(MainActivity.this, textureActivity.class);
+                        startActivity(intent1);
+                    } else {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                        builder.setTitle("Error");
+                        builder.setMessage("用户名密码错误");
+                        builder.setPositiveButton("OK", null);
+                        builder.show();
+
+                        ed1.setText("");
+                        ed2.setText("");
+                    }
+                }
+
             }
         });
+
+
+        findViewById(R.id.btn_register).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this, register.class);
+                startActivity(intent1);
+
+            }
+        });
+
+
 
 
     }
@@ -102,20 +155,20 @@ public class MainActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, permissions, mRequestCode);
         }else{
             //说明权限都已经通过，可以做你想做的事情去
-            Thread myThread=new Thread(){//创建子线程
-                @Override
-                public void run() {
-                    try{
-                        sleep(2000);//使程序休眠3秒
-                        Intent it=new Intent(MainActivity.this,textureActivity.class);//启动MainActivity
-                        startActivity(it);
-                        finish();//关闭当前活动
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-                }
-            };
-            myThread.start();//启动线程
+//            Thread myThread=new Thread(){//创建子线程
+//                @Override
+//                public void run() {
+//                    try{
+//                        sleep(2000);//使程序休眠3秒
+//                        Intent it=new Intent(MainActivity.this,textureActivity.class);//启动MainActivity
+//                        startActivity(it);
+//                        finish();//关闭当前活动
+//                    }catch (Exception e){
+//                        e.printStackTrace();
+//                    }
+//                }
+//            };
+//            myThread.start();//启动线程
         }
     }
 
