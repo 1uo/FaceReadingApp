@@ -78,28 +78,41 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_login).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Cursor cur = mSQLiteDatabase.rawQuery("SELECT * FROM User", null);
-                if( cur != null ){
-                    if( cur.moveToFirst() ){
-                        do{
-                            int numColumn = cur.getColumnIndex("username");
-                            String num            = cur.getString(numColumn);
-                            int numColumn2 = cur.getColumnIndex("password");
-                            String num2            = cur.getString(numColumn2);
-                            if(num.equals(ed1.getText().toString()) && num2.equals(ed2.getText().toString())) {
-                                Intent intent1 = new Intent(MainActivity.this, textureActivity.class);
-                                startActivity(intent1);
-                            }
 
-                        }while( cur.moveToNext());
-                    }
+                Log.d("hereis","111");
+                Cursor cur = mSQLiteDatabase.rawQuery("SELECT * FROM User", null);
+                if ("admin".equals(ed1.getText().toString()) && "123456".equals(ed2.getText().toString())) {
+                    Intent intent1 = new Intent(MainActivity.this, textureActivity.class);
+                    startActivity(intent1);
                 }else {
 
 
-                    if ("admin".equals(ed1.getText().toString()) && "123456".equals(ed2.getText().toString())) {
-                        Intent intent1 = new Intent(MainActivity.this, textureActivity.class);
-                        startActivity(intent1);
-                    } else {
+                    boolean alert = false;
+
+                    if (cur != null) {
+                        Log.d("hereis", "222");
+                        if (cur.moveToFirst()) {
+                            do {
+                                int numColumn = cur.getColumnIndex("username");
+                                String num = cur.getString(numColumn);
+                                int numColumn2 = cur.getColumnIndex("password");
+                                String num2 = cur.getString(numColumn2);
+                                if (num.equals(ed1.getText().toString()) && num2.equals(ed2.getText().toString())) {
+                                    Intent intent1 = new Intent(MainActivity.this, textureActivity.class);
+                                    startActivity(intent1);
+                                }
+
+                            } while (cur.moveToNext());
+                        }
+
+                        alert = true;
+                    }
+
+
+                    Log.d("hereis", "333");
+
+                    if (alert) {
+
                         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                         builder.setTitle("Error");
                         builder.setMessage("用户名密码错误");
@@ -109,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
                         ed1.setText("");
                         ed2.setText("");
                     }
+
                 }
 
             }

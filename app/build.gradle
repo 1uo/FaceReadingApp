@@ -34,6 +34,7 @@ dependencies {
     implementation 'com.baidu.aip:java-sdk:4.7.0'
     implementation 'id.zelory:compressor:2.1.0'
     implementation 'com.tzutalin.dlib-android-app:dlib:1.0.4'
+    implementation 'q.rorbin:RadarView:1.0.4'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'

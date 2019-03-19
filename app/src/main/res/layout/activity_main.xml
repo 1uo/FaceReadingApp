@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="180dp"
         android:background="@drawable/rectangle_edittext">
 
         <ImageView
@@ -131,7 +131,9 @@
         android:text="记住密码"
         android:textColor="#666666"
         android:textSize="15sp"
-        android:buttonTint="@color/colorLoginButton" />
+        android:buttonTint="@color/colorLoginButton"
+        android:visibility="invisible"
+        />
 
     <Button
         android:id="@+id/btn_login"

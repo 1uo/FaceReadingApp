@@ -35,9 +35,13 @@ import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Base64;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+
+import rorbin.q.radarview.RadarData;
+import rorbin.q.radarview.RadarView;
 
 import static java.lang.Math.abs;
 import static java.lang.Math.pow;
@@ -143,6 +147,21 @@ public class result extends AppCompatActivity {
                         .show();
             }
         });
+
+
+        List<Float> values = new ArrayList<>();
+        Collections.addAll(values, 3.2f, 6.7f, 2f, 7f, 5.6f);
+        RadarData data = new RadarData(values);
+
+        RadarView mRadarView=findViewById(R.id.radarView);
+        mRadarView.addData(data);
+        List<String> strings = new ArrayList<>();
+        //看慧在额，看名在眉，看贵在眼，看在鼻，看在嘴，看福在耳，看寿在颌
+        Collections.addAll(strings,"名","禄","贵","富","慧");
+        mRadarView.setVertexText(strings);
+        // mRadarView.setVertexIconPosition(0);
+        //mRadarView.setVertexTextOffset(0f);
+        mRadarView.setMaxValue(10f);
 
 
     }

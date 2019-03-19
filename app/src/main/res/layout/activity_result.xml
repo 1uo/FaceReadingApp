@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/back1"
+
     tools:context=".result">
 
     <LinearLayout
@@ -12,69 +12,121 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal">
+
+
     <ImageView
         android:layout_width="200dp"
         android:layout_height="180dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="80dp"
+
         android:id="@+id/image"
         />
 
 
 
-        <TextView
-            android:layout_marginTop="10dp"
-            android:layout_width="180dp"
-            android:layout_height="50dp"
-            android:text="眼睛适中"
-            android:id="@+id/textView1"
-            android:layout_marginLeft="100dp"
-            android:textStyle="bold"
-            android:background="@mipmap/back6"
-            android:textSize="28dp"
-            android:gravity="center"
+
+        <rorbin.q.radarview.RadarView
+            android:id="@+id/radarView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="20dp"
             />
 
-        <TextView
-            android:layout_marginTop="6dp"
-            android:layout_width="180dp"
-            android:layout_height="50dp"
-            android:text="嘴角向上"
-            android:id="@+id/textView2"
-            android:layout_marginLeft="100dp"
-            android:textStyle="bold"
-            android:background="@mipmap/back6"
-            android:textSize="28dp"
-            android:gravity="center"
 
-            />
 
 
 
 
         <Button
             android:text="面相分析"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:layout_width="120dp"
-            android:layout_height="50dp"
             android:id="@+id/text1"
-            android:layout_marginTop="40dp"
-            android:layout_marginLeft="125dp"
-            android:background="@mipmap/back2"
+
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+
+
+
+            android:background="@drawable/round_corner_bg"
+            android:gravity="center"
+            android:padding="10dp"
+
+            android:textColor="#fff"
+            android:textSize="18sp"
+
+            android:layout_marginTop="10dp"
+
+
+
+
+
             />
 
         <Button
             android:text="返回"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:layout_width="120dp"
-            android:layout_height="50dp"
+
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/round_corner_bg"
+            android:gravity="center"
+            android:padding="10dp"
+
+            android:textColor="#fff"
+            android:textSize="18sp"
             android:id="@+id/text2"
-            android:layout_marginTop="6dp"
-            android:layout_marginLeft="125dp"
-            android:background="@mipmap/back8"
+            android:layout_marginTop="10dp"
+
+
             />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+
+
+    </LinearLayout>
+
+
+        <TextView
+        android:layout_marginTop="100dp"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:text="眼睛适中"
+        android:id="@+id/textView1"
+        android:layout_marginLeft="100dp"
+        android:textStyle="bold"
+
+        android:textSize="28dp"
+        android:gravity="center"
+        />
+
+        <TextView
+        android:layout_marginTop="6dp"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:text="嘴角向上"
+        android:id="@+id/textView2"
+        android:layout_marginLeft="100dp"
+        android:textStyle="bold"
+        android:background="@mipmap/back6"
+        android:textSize="28dp"
+        android:gravity="center"
+
+        />
+
+
+
 
     </LinearLayout>
 
