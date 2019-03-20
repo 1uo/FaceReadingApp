@@ -2,7 +2,7 @@ This project is my FYP.
 Technique used: ```Baidu Face detection API```    ```dlib```  ```SQLite```.  
 
 The ```Baidu API``` is implemented in the real time face detection part.  
-The ```dlib``` is implemented in the gallery part.
+The ```dlib``` is implemented in the gallery part.  
 The ```SQLite``` is implemented in the register and login part.
 
 **Flow chart:**
